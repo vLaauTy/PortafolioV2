@@ -73,7 +73,7 @@ export const SidebarRoute = styled(LinkR)`
   white-space: nowrap;
   padding: 2rem 3rem;
   gap: 10px;
-
+  color:#252728;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;

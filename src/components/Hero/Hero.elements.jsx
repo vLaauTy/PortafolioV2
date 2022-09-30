@@ -101,6 +101,16 @@ export const HeroImage = styled.img`
   display: flex;
   justify-content: flex-end;
   margin-right: 0;
+
+  @media screen and (max-width: 600px) {
+    width: 380px;
+  height: 400px;
+  }
+
+  @media screen and (max-width: 470px) {
+    width: 280px;
+  height: 300px;
+  }
 `;
 
 export const ButtonCV = styled.a`

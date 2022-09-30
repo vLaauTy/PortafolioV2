@@ -20,7 +20,6 @@ export const ProyectosWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
 `;
 
 export const ProyectosTittle = styled.h3`
@@ -41,26 +40,26 @@ export const ArchivosContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (max-width:980px) {
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:center;
+  @media screen and (max-width: 980px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
 export const Card = styled.div`
   width: auto;
-  max-width:48%;
+  max-width: 48%;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: #222525;
-  padding-bottom:3rem;
-margin:1.4rem 0;
-  @media screen and (max-width:980px) {
+  padding-bottom: 3rem;
+  margin: 1.4rem 0;
+  @media screen and (max-width: 980px) {
     max-height: 48%;
-    max-width:80%;
+    max-width: 80%;
   }
 `;
 
@@ -70,7 +69,7 @@ export const CardImage = styled.img`
 `;
 
 export const CardDescriptionContainer = styled.div`
-  height: 40%;
+  height: auto;
   padding: 1.8rem;
   display: flex;
   flex-direction: column;
@@ -94,7 +93,7 @@ export const CardTecnologias = styled.div`
   display: flex;
   flex-direction: row;
   gap: 15px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 `;
 
 export const Tecnologias = styled.button`
@@ -103,7 +102,7 @@ export const Tecnologias = styled.button`
   color: #1f2626;
   white-space: nowrap;
   padding: 8px 13px;
-
+  
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
@@ -117,10 +116,11 @@ export const Tecnologias = styled.button`
   outline: none;
   border: none;
 
-
-
-
-  
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+    padding: 4px 7px;
+    font-size: 9px;
+  }
 `;
 
 export const CardDescription = styled.p`
@@ -132,6 +132,10 @@ export const CardDescription = styled.p`
   line-height: 24px;
   letter-spacing: 0.04em;
   margin-top: 16px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+  }
 `;
 
 export const ButtonProyectos = styled(Link)`
@@ -141,19 +145,19 @@ export const ButtonProyectos = styled(Link)`
   white-space: nowrap;
   padding: 12px 30px 13px;
   gap: 10px;
-text-decoration:none;
-  font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
   outline: none;
   border: none;
   transition: all 0.3s ease-out;
   cursor: pointer;
 
-margin: 2rem auto;
-text-align:center;
+  margin: 2rem auto;
+  text-align: center;
 
   &:hover {
     color: #07356b;
@@ -161,45 +165,49 @@ text-align:center;
     transition: all 0.2s ease;
   }
 
-
+  
 `;
 
-export const ButtonMuestra=styled.a`
-    border-radius: 6px;
-    text-decoration:none;
+export const ButtonMuestra = styled.a`
+  border-radius: 6px;
+  text-decoration: none;
   background: var(--H1Color);
   color: #252728;
   white-space: nowrap;
   padding: 12px 30px 13px;
   gap: 10px;
-  width:30%;
-  font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
+  width: 30%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
   outline: none;
   border: none;
   transition: all 0.3s ease-out;
   cursor: pointer;
 
-margin:1rem;
-text-align:center;
+  margin: 1rem;
+  text-align: center;
 
   &:hover {
     color: #07356b;
     box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
     transition: all 0.2s ease;
   }
-  @media screen and (max-width:600px) {
+
+  @media screen and (max-width: 500px) {
+    font-size: 10px;
+    width: 30%;
+    margin: 0.7rem;
     font-size: 12px;
-    padding: 0.6rem;
+    padding: 0.3rem;
   }
-    
+  
 `;
 
-export const ButtonMuestraContainer=styled.div`
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-end;
+export const ButtonMuestraContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 `;

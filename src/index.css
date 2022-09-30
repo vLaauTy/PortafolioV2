@@ -43,11 +43,6 @@ body {
   }
 }
 
-.pos-center {
-  position: fixed;
-  top: calc(50% - 40px);
-  left: calc(50% - 40px);
-}
 
 .loader {
   border: 10px solid #f3f3f3;
