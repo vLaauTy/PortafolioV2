@@ -17,20 +17,21 @@ export const ContactoWrapper = styled.div`
   width: 100%;
   padding: 3rem 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 2.7rem;
 `;
 
 export const Form = styled.form`
-  height: 400px;
+  height: auto;
   width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+  padding:2rem;
 `;
 
 export const FormItem = styled.div`
@@ -147,4 +148,13 @@ font-size: 14px;
 line-height: 17px;
     text-align:right;
     color: #C05353;
+ `;
+
+ export const MessageSucces=styled.div`
+ border-radius: 20px;
+  padding: 1rem;
+    text-Align:center;
+    color: "#fff";
+    font-Weight: bold;
+    background: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
  `;

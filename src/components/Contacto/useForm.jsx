@@ -1,30 +1,32 @@
 import { useState } from "react";
 import { helpHttp } from "./helpHttp";
 
-
-export const useForm = (initialform, validateForm) => {
-  const [form, setform] = useState(initialform);
-  const [errors, seterrors] = useState({});
-  const [loading, setloading] = useState(false);
-  const [response, setresponse] = useState(null);
+export const useForm = (initialForm, validateForm) => {
+  const [form, setForm] = useState(initialForm);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setform({ ...form, [name]: value });
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
   };
 
   const handleBlur = (e) => {
     handleChange(e);
-    seterrors(validateForm(form));
+    setErrors(validateForm(form));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    seterrors(validateForm(form));
+    setErrors(validateForm(form));
 
     if (Object.keys(errors).length === 0) {
-      alert("Enviando formulario");
-      setloading(true);
+      setLoading(true);
       helpHttp()
         .post("https://formsubmit.co/ajax/lautiatencio@gmail.com", {
           body: form,
@@ -34,16 +36,16 @@ export const useForm = (initialform, validateForm) => {
           },
         })
         .then((res) => {
-            setloading(false);
-            setresponse(true);
-            setform(initialform);
-            setTimeout(() => {
-                setresponse(false)
-            }, 3000);
+          setLoading(false);
+          setResponse(true);
+          setForm(initialForm);
+          setTimeout(() => setResponse(false), 5000);
         });
     } else {
       return;
     }
+
+    e.target.reset();
   };
 
   return {
