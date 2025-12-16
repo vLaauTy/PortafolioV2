@@ -49,4 +49,15 @@ export const dataProyectos = [
     linkRepo: " https://github.com/No-Country/C8-65-FT-MERN",
     tecnologias: ["MERN", "Tailwind", "Framer Motion"],
   },
+  {
+    id: 6,
+    nombre: "SaludSync",
+    img: "./assets/saludsync.png",
+    texto:
+      "Proyecto final para la carrera, se trata de una propuesta de software pensado para la gestión de turnos médicos de un consultorio. Su foco principal será el de mejorar la organización de turnos de cada médico dentro del consultorio. ",
+    linkDemo: "Disponible en github",
+    linkRepo: " https://github.com/vLaauTy/Farmacia",
+    tecnologias: ["Java", "Springboot", "thymleaf", "MySQL"],
+
+  }
 ];

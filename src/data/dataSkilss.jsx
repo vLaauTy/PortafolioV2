@@ -31,9 +31,15 @@ export const dataSkills = [
   },
   {
     id: 7,
-    tittle: "Redux",
-    image: "https://img.icons8.com/color/480/redux.png",
+    tittle: "Java",
+    image: "./java.png",
   },
+  {
+    id: 8,
+    tittle: "Spring Boot",
+    image: "https://img.icons8.com/color/480/spring-logo.png",
+  },
+
 ];
 
 export const dataProyectos = [
@@ -45,7 +51,7 @@ export const dataProyectos = [
       "Pagina realizada simulando un ecommerce de bebidas utilizando useContext y firebase para su base de datos",
     linkDemo: "https://topdrinks-e8419.firebaseapp.com/",
     linkRepo: "https://github.com/vLaauTy/topDrinkAtencio",
-    tecnologias: ["ReactJS", "useContext", "Firebase",'MaterialUI'],
+    tecnologias: ["ReactJS", "useContext", "Firebase", 'MaterialUI'],
   },
   {
     id: 2,
@@ -55,7 +61,7 @@ export const dataProyectos = [
       "Pagina realizada para la venta de equipos de laboratorio, realizada en equipo junto a un front end developer y dos diseñadoras UX/UI",
     linkDemo: "https://prueba-hexatech-web.web.app/",
     linkRepo: "https://github.com/vLaauTy/hexatech.ar",
-    tecnologias: ["ReactJS", "Styled Components","React hook forms","Framer Motion"],
+    tecnologias: ["ReactJS", "Styled Components", "React hook forms", "Framer Motion"],
   },
   {
     id: 3,

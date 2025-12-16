@@ -1,13 +1,14 @@
 export const dataProyectosMain = [
   {
     id: 1,
-    nombre: "Pharmacy Medicamentos",
-    img: "./assets/pharmacy-mern.png",
+    nombre: "SaludSync",
+    img: "./assets/saludsync.png",
     texto:
-      "Proyecto realizado con stack mern para resolver necesidades medicas de las personas",
-    linkDemo: "https://pharmacy-mern.onrender.com/",
-    linkRepo: " https://github.com/No-Country/C8-65-FT-MERN",
-    tecnologias: ["MERN", "Tailwind", "Framer Motion"],
+      "Proyecto final para la carrera, se trata de una propuesta de software pensado para la gestión de turnos médicos de un consultorio. Su foco principal será el de mejorar la organización de turnos de cada médico dentro del consultorio. ",
+    linkDemo: "Disponible en github",
+    linkRepo: " https://github.com/vLaauTy/Farmacia",
+    tecnologias: ["Java", "Springboot", "thymleaf", "MySQL"],
+
   },
   {
     id: 2,

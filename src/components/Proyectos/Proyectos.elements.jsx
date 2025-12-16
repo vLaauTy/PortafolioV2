@@ -48,24 +48,26 @@ export const ArchivosContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  width: auto;
-  max-width: 48%;
+  width: 48%;
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   background: #222525;
-  padding-bottom: 3rem;
   margin: 1.4rem 0;
+  overflow: hidden;
+  
   @media screen and (max-width: 980px) {
-    max-height: 48%;
-    max-width: 80%;
+    width: 80%;
   }
 `;
 
 export const CardImage = styled.img`
-  height: 60%;
+  height: 300px;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
 `;
 
 export const CardDescriptionContainer = styled.div`
@@ -75,6 +77,7 @@ export const CardDescriptionContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-grow: 1;
 `;
 
 export const CardTittle = styled.h3`
@@ -210,4 +213,6 @@ export const ButtonMuestraContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding: 0 1.8rem 1.8rem;
+  margin-top: auto;
 `;
