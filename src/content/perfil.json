@@ -1,0 +1,46 @@
+{
+  "nombre": "Lautaro Atencio",
+  "titulo": {
+    "es": "Técnico superior en desarrollo de software",
+    "en": "Software Development Technician"
+  },
+  "descripcion": {
+    "es": "Soy Lautaro Atencio y soy técnico superior en desarrollo de software, capacitado para realizar análisis de sistemas y realizar desarrollo de software. Estoy especializado en el lenguaje Java con el framework Spring, utilizando también como base de datos MySQL.",
+    "en": "I'm Lautaro Atencio, a software development technician trained in systems analysis and software development. I specialize in Java with the Spring framework, using MySQL as my database."
+  },
+  "imagen": "/image.png",
+  "cv": "/assets/CV_Lautaro_Atencio_Exequiel.pdf",
+  "sobreMi": {
+    "es": "Empecé en el mundo de la programación estudiando MySQL en la universidad, después seguí investigando por mi propia cuenta sobre el desarrollo front end de sitios web. Actualmente me enfoco más en desarrollos de ecommerce, tanto en el diseño de su interfaz como en la realización de su respectivo CRUD.",
+    "en": "I got into programming by studying MySQL at university, and then kept learning front-end web development on my own. Today I mostly focus on ecommerce projects, from designing the interface to building the CRUD behind it."
+  },
+  "email": "lautiatencio@gmail.com",
+  "redes": [
+    { "red": "github", "url": "https://github.com/vLaauTy" },
+    { "red": "linkedin", "url": "https://www.linkedin.com/in/lautaro-atencio-40b0511a0/" }
+  ],
+  "secciones": {
+    "sobreMi": {
+      "es": "Cómo llegué al desarrollo",
+      "en": "How I got into development"
+    },
+    "proyectos": {
+      "es": "Proyectos destacados",
+      "en": "Featured projects"
+    },
+    "skills": {
+      "es": "Tecnologías con las que trabajo",
+      "en": "Technologies I work with"
+    }
+  },
+  "contacto": {
+    "titulo": {
+      "es": "¿Hablamos?",
+      "en": "Let's talk"
+    },
+    "texto": {
+      "es": "Si tenés una propuesta, un proyecto o simplemente querés saludar, escribime y te respondo a la brevedad.",
+      "en": "Have a proposal, a project, or just want to say hi? Drop me a message and I'll get back to you soon."
+    }
+  }
+}

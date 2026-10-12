@@ -1,0 +1,76 @@
+{
+  "proyectos": [
+    {
+      "nombre": { "es": "SaludSync", "en": "SaludSync" },
+      "imagen": "/assets/saludsync.png",
+      "descripcion": {
+        "es": "Proyecto final para la carrera. Se trata de una propuesta de software pensado para la gestión de turnos médicos de un consultorio. Su foco principal es mejorar la organización de turnos de cada médico dentro del consultorio.",
+        "en": "Final degree project: software designed to manage medical appointments at a clinic. Its main goal is to improve how each doctor's appointments are organized within the practice."
+      },
+      "tecnologias": ["Java", "Spring Boot", "Thymeleaf", "MySQL"],
+      "demo": "",
+      "repo": "https://github.com/vLaauTy/Farmacia",
+      "destacado": true
+    },
+    {
+      "nombre": { "es": "Hexa Technology", "en": "Hexa Technology" },
+      "imagen": "/assets/Hexa.png",
+      "descripcion": {
+        "es": "Página realizada para la venta de equipos de laboratorio, desarrollada en equipo junto a un front end developer y dos diseñadoras UX/UI.",
+        "en": "Website for selling laboratory equipment, built as a team with a front-end developer and two UX/UI designers."
+      },
+      "tecnologias": ["ReactJS", "Styled Components", "React Hook Form", "Framer Motion"],
+      "demo": "https://prueba-hexatech-web.web.app/",
+      "repo": "https://github.com/vLaauTy/hexatech.ar",
+      "destacado": true
+    },
+    {
+      "nombre": { "es": "Pharmacy Medicamentos", "en": "Pharmacy Medicines" },
+      "imagen": "/assets/pharmacy-mern.png",
+      "descripcion": {
+        "es": "Proyecto realizado con stack MERN para resolver necesidades médicas de las personas.",
+        "en": "Project built with the MERN stack to help people with their medical needs."
+      },
+      "tecnologias": ["MERN", "Tailwind", "Framer Motion"],
+      "demo": "https://pharmacy-mern.onrender.com/",
+      "repo": "https://github.com/No-Country/C8-65-FT-MERN",
+      "destacado": false
+    },
+    {
+      "nombre": { "es": "TopDrinks", "en": "TopDrinks" },
+      "imagen": "/assets/topDrinks.png",
+      "descripcion": {
+        "es": "Página realizada simulando un ecommerce de bebidas, utilizando useContext y Firebase para su base de datos.",
+        "en": "A mock beverage ecommerce site, using useContext and Firebase as its database."
+      },
+      "tecnologias": ["ReactJS", "useContext", "Firebase", "MaterialUI"],
+      "demo": "https://topdrinks-e8419.firebaseapp.com/",
+      "repo": "https://github.com/vLaauTy/topDrinkAtencio",
+      "destacado": false
+    },
+    {
+      "nombre": { "es": "Ecommerce JavaScript", "en": "JavaScript Ecommerce" },
+      "imagen": "/assets/javascript.jpg",
+      "descripcion": {
+        "es": "Página realizada para practicar código JavaScript.",
+        "en": "A site built to practice JavaScript."
+      },
+      "tecnologias": ["JavaScript", "Toastify"],
+      "demo": "https://vlaauty.github.io/proyecto_javascript/",
+      "repo": "https://github.com/vLaauTy/proyecto_javascript",
+      "destacado": false
+    },
+    {
+      "nombre": { "es": "Práctica Redux", "en": "Redux Practice" },
+      "imagen": "/assets/redux-practica.png",
+      "descripcion": {
+        "es": "Aplicación para practicar Redux Toolkit.",
+        "en": "An app to practice Redux Toolkit."
+      },
+      "tecnologias": ["ReactJS", "Redux"],
+      "demo": "https://redux-toolkit-tasks.web.app/",
+      "repo": "https://github.com/vLaauTy/redux-crud",
+      "destacado": false
+    }
+  ]
+}

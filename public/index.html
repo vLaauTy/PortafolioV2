@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./favicon2.ico" />
-    <title>Portafolio | Lautaro Atencio</title>
+    <meta name="description" content="Portafolio de Lautaro Atencio, técnico superior en desarrollo de software. Proyectos con Java, Spring Boot, React y MySQL.">
+    <meta name="theme-color" content="#f7f5f0">
+    <script>
+      // Aplica el tema antes de pintar la página para evitar el parpadeo
+      (function () {
+        var tema;
+        try { tema = localStorage.getItem("tema"); } catch (e) {}
+        if (tema !== "light" && tema !== "dark") {
+          tema = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = tema;
+      })();
+    </script>
+    <link rel="icon" href="/favicon2.ico" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Lautaro Atencio | Portafolio</title>
 </head>
 <body>
+    <noscript>Necesitás habilitar JavaScript para ver este sitio.</noscript>
     <div id="root"></div>
 </body>
 </html>

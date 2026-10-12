@@ -1,0 +1,101 @@
+# Configuración de Decap CMS. El panel queda en https://<tu-sitio>/admin
+# Cada vez que guardás ("Publicar"), Decap hace un commit en GitHub y Netlify vuelve a publicar el sitio.
+backend:
+  name: github
+  repo: vLaauTy/PortafolioV2
+  branch: main
+  commit_messages:
+    update: "Contenido: actualizar {{slug}}"
+    uploadMedia: "Contenido: subir {{path}}"
+
+# Permite editar en local con `npx decap-server` (ver README)
+local_backend: true
+
+locale: es
+
+# Las imágenes y archivos subidos desde el panel se guardan acá
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+# Campos de texto traducibles: cada uno guarda { es, en }. Si el inglés queda vacío, el sitio muestra el español.
+_linea: &linea
+  - { name: es, label: Español, widget: string }
+  - { name: en, label: Inglés, widget: string, required: false }
+_parrafo: &parrafo
+  - { name: es, label: Español, widget: text }
+  - { name: en, label: Inglés, widget: text, required: false }
+
+collections:
+  - name: contenido
+    label: Contenido del sitio
+    editor:
+      preview: false
+    files:
+      - name: perfil
+        label: Perfil, Sobre mí y Contacto
+        file: src/content/perfil.json
+        fields:
+          - { name: nombre, label: Nombre, widget: string }
+          - { name: titulo, label: Título profesional, widget: object, fields: *linea }
+          - { name: descripcion, label: Descripción (portada), widget: object, fields: *parrafo }
+          - { name: imagen, label: Imagen de portada, widget: image }
+          - { name: cv, label: CV (PDF), widget: file }
+          - { name: sobreMi, label: Sobre mí, widget: object, fields: *parrafo }
+          - { name: email, label: Email de contacto (también recibe el formulario), widget: string }
+          - name: redes
+            label: Redes
+            widget: list
+            summary: "{{fields.red}}"
+            fields:
+              - name: red
+                label: Red
+                widget: select
+                options:
+                  - { label: GitHub, value: github }
+                  - { label: LinkedIn, value: linkedin }
+                  - { label: Instagram, value: instagram }
+                  - { label: X / Twitter, value: twitter }
+                  - { label: Otra, value: web }
+              - { name: url, label: URL, widget: string }
+          - name: secciones
+            label: Títulos de las secciones
+            widget: object
+            fields:
+              - { name: sobreMi, label: Sobre mí, widget: object, fields: *linea }
+              - { name: proyectos, label: Proyectos, widget: object, fields: *linea }
+              - { name: skills, label: Skills, widget: object, fields: *linea }
+          - name: contacto
+            label: Sección Contacto
+            widget: object
+            fields:
+              - { name: titulo, label: Título, widget: object, fields: *linea }
+              - { name: texto, label: Texto, widget: object, fields: *parrafo }
+
+      - name: proyectos
+        label: Proyectos
+        file: src/content/proyectos.json
+        fields:
+          - name: proyectos
+            label: Proyectos (arrastrá para cambiar el orden)
+            widget: list
+            summary: "{{fields.nombre.es}}"
+            fields:
+              - { name: nombre, label: Nombre, widget: object, fields: *linea }
+              - { name: imagen, label: Imagen, widget: image }
+              - { name: descripcion, label: Descripción, widget: object, fields: *parrafo }
+              - { name: tecnologias, label: Tecnologías, widget: list, hint: "Separadas por coma" }
+              - { name: demo, label: Link a la demo, widget: string, required: false, hint: "Dejalo vacío si no hay demo online" }
+              - { name: repo, label: Link al repositorio, widget: string, required: false }
+              - { name: destacado, label: Mostrar en la página de inicio, widget: boolean, default: false }
+
+      - name: skills
+        label: Skills
+        file: src/content/skills.json
+        fields:
+          - name: skills
+            label: Skills (arrastrá para cambiar el orden)
+            widget: list
+            summary: "{{fields.nombre}}"
+            fields:
+              - { name: nombre, label: Nombre, widget: string }
+              - { name: icono, label: Ícono, widget: image }

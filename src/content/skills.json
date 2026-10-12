@@ -1,0 +1,12 @@
+{
+  "skills": [
+    { "nombre": "Java", "icono": "/assets/skills/java.png" },
+    { "nombre": "Spring Boot", "icono": "/assets/skills/spring-boot.png" },
+    { "nombre": "JavaScript", "icono": "/assets/skills/javascript.png" },
+    { "nombre": "ReactJS", "icono": "/assets/skills/react.png" },
+    { "nombre": "HTML", "icono": "/assets/skills/html.png" },
+    { "nombre": "CSS", "icono": "/assets/skills/css.png" },
+    { "nombre": "Styled Components", "icono": "/assets/skills/styled-components.png" },
+    { "nombre": "Git", "icono": "/assets/skills/git.png" }
+  ]
+}

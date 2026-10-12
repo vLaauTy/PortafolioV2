@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Portafolio · Lautaro Atencio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sitio hecho con React (Create React App) y styled-components, publicado en Netlify.
 
-## Available Scripts
+```bash
+npm install
+npm start        # desarrollo en http://localhost:3000
+npm run build    # build de producción en /build
+```
 
-In the project directory, you can run:
+## Cómo cambiar el contenido
 
-### `npm start`
+Todo el contenido está en `src/content/`. No hace falta tocar componentes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Archivo | Qué contiene |
+| --- | --- |
+| `perfil.json` | Nombre, título, descripción, imagen, CV, "Sobre mí", email, redes, títulos de sección y textos de Contacto |
+| `proyectos.json` | Lista de proyectos. Con `"destacado": true` aparecen en el inicio. El orden de la lista es el orden en pantalla |
+| `skills.json` | Lista de tecnologías con su ícono |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Las imágenes van en `public/assets/` y se referencian con la ruta absoluta, por ejemplo `/assets/mi-proyecto.png`.
 
-### `npm test`
+**Idiomas:** los textos traducibles tienen la forma `{ "es": "...", "en": "..." }`. Si el inglés queda vacío, se muestra el español.
+Los textos fijos de la interfaz (botones, etiquetas del formulario, mensajes) están en `src/i18n.js`.
+Para compartir el sitio directamente en inglés: `https://<tu-sitio>/?lang=en`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Hay dos formas de editarlo:
 
-### `npm run build`
+### 1. Desde el panel web (Decap CMS)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Entrá a `https://<tu-sitio>.netlify.app/admin`, iniciá sesión con GitHub, editá y tocá **Publicar**.
+Decap hace un commit en el repo y Netlify vuelve a publicar el sitio solo, en uno o dos minutos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Configuración inicial (una sola vez):**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. En GitHub: *Settings → Developer settings → OAuth Apps → New OAuth App*.
+   - Homepage URL: la URL de tu sitio en Netlify.
+   - Authorization callback URL: `https://api.netlify.com/auth/done`
+   - Copiá el **Client ID** y generá un **Client secret**.
+2. En Netlify: *Site configuration → Access & security → OAuth → Install provider → GitHub* y pegá el Client ID y el secret.
+3. Listo: `/admin` ya permite iniciar sesión con tu cuenta de GitHub (necesita permisos de escritura en el repo).
 
-### `npm run eject`
+La configuración del panel (qué campos se ven) está en `public/admin/config.yml`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Editando los JSON a mano
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Editás el archivo, hacés commit y push a `main`, y Netlify publica.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Para usar el panel en local sin login: corré `npx decap-server` en una terminal, `npm start` en otra, y entrá a `http://localhost:3000/admin/index.html`. Los cambios se guardan directo en tus archivos.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Diseño
 
-## Learn More
+Los colores, tipografías y espaciados están definidos como variables en `src/index.css` (`:root` para el modo claro y `:root[data-theme="dark"]` para el oscuro).
+Por defecto el tema sigue al sistema. El botón sol/luna del header lo cambia y la elección queda guardada en el navegador.
+El idioma y el tema se manejan en `src/preferencias.jsx` (hook `usePreferencias()`).
+Los componentes reutilizables (botones, secciones, títulos) están en `src/components/ui.jsx`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Netlify
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Build command: `npm run build` · Publish directory: `build`
+- `public/_redirects` hace que las rutas de React funcionen al recargar y redirige las rutas viejas (`/proyectosfull`, `/contacto`).

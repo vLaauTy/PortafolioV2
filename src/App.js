@@ -1,32 +1,38 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contacto from "./components/Contacto/Contacto";
-import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
-import ProyectosFull from "./components/ProyectosFull/Proyectos";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ScrollManager from "./components/ScrollManager";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import { PreferenciasProvider, usePreferencias } from "./preferencias";
 
-import Sidebar from "./components/SideBar/Sidebar";
-import GlobalStyle from "./GlobalStyles";
-import Home from "./pages/Home/Home";
+const SkipLink = () => {
+  const { t } = usePreferencias();
+  return (
+    <a className="skip-link" href="#contenido">
+      {t.saltarContenido}
+    </a>
+  );
+};
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggle = () =>{
-    setIsOpen(!isOpen);
-  }
   return (
-    <BrowserRouter>
-      <GlobalStyle />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <NavBar toggle={toggle}/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/proyectosfull" element={<ProyectosFull />} />
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+    <PreferenciasProvider>
+      <BrowserRouter>
+        <ScrollManager />
+        <SkipLink />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/proyectos" element={<Projects />} />
+          {/* Rutas viejas, por si alguien tiene el link guardado */}
+          <Route path="/proyectosfull" element={<Navigate to="/proyectos" replace />} />
+          <Route path="/contacto" element={<Navigate to={{ pathname: "/", hash: "#contacto" }} replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </PreferenciasProvider>
   );
 }
 
