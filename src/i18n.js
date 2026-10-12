@@ -10,6 +10,9 @@ export const textos = {
     nav: { sobreMi: "Sobre mí", proyectos: "Proyectos", skills: "Skills", contacto: "Contacto" },
     cv: "CV",
     descargarCv: "Descargar CV",
+    // Se usan cuando el CV ofrecido está en otro idioma (no aplica en español)
+    cvOtroIdioma: "CV",
+    descargarCvOtroIdioma: "Descargar CV",
     verProyectos: "Ver proyectos",
     verTodos: "Ver todos",
     verDemo: "Ver demo",
@@ -60,6 +63,8 @@ export const textos = {
     nav: { sobreMi: "About", proyectos: "Projects", skills: "Skills", contacto: "Contact" },
     cv: "Resume",
     descargarCv: "Download resume",
+    cvOtroIdioma: "Resume (ES)",
+    descargarCvOtroIdioma: "Download resume (Spanish)",
     verProyectos: "See projects",
     verTodos: "View all",
     verDemo: "Live demo",

@@ -55,6 +55,10 @@ const buttonBase = css`
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease,
     transform 0.2s ease;
 
+  svg {
+    flex: none;
+  }
+
   &:active {
     transform: translateY(1px);
   }

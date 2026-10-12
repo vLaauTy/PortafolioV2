@@ -29,6 +29,7 @@
     }
   },
   "cv": "/assets/uploads/atencio_lautaro.pdf",
+  "cvEn": "",
   "imagen": "/image.png",
   "sobreMi": {
     "es": "Empecé en el mundo de la programación estudiando MySQL en la universidad, después seguí investigando por mi propia cuenta sobre el desarrollo front end de sitios web. Actualmente me enfoco más en desarrollos de ecommerce, tanto en el diseño de su interfaz como en la realización de su respectivo CRUD.",
@@ -36,7 +37,7 @@
   },
   "titulo": {
     "es": "Técnico superior en desarrollo de software",
-    "en": "Software Development Technician"
+    "en": "Software Developer"
   },
   "email": "lautiatencio@gmail.com",
   "redes": [

@@ -21,7 +21,9 @@ const crearContenido = (lang) => {
     titulo: tr(perfilData.titulo, lang),
     descripcion: tr(perfilData.descripcion, lang),
     imagen: perfilData.imagen,
-    cv: perfilData.cv,
+    cv: (lang === "en" && perfilData.cvEn) || perfilData.cv,
+    // true cuando el CV que se ofrece no está en el idioma de la página (inglés sin CV en inglés)
+    cvEnOtroIdioma: lang === "en" && !perfilData.cvEn,
     sobreMi: tr(perfilData.sobreMi, lang),
     email: perfilData.email,
     redes: (perfilData.redes || []).map((r) => ({ ...r, url: limpiarUrl(r.url) })),

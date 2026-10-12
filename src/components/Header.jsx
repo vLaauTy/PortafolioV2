@@ -223,7 +223,7 @@ const Header = () => {
           ))}
           {perfil.cv && (
             <CvButton as="a" href={perfil.cv} download $variant="secondary">
-              <FiDownload aria-hidden="true" /> {t.cv}
+              <FiDownload aria-hidden="true" /> {perfil.cvEnOtroIdioma ? t.cvOtroIdioma : t.cv}
             </CvButton>
           )}
         </Nav>

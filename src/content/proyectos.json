@@ -25,7 +25,7 @@
       "destacado": true
     },
     {
-      "nombre": { "es": "Pharmacy Medicamentos", "en": "Pharmacy Medicines" },
+      "nombre": { "es": "Pharmacy Medicamentos", "en": "Pharmacy Medicamentos" },
       "imagen": "/assets/pharmacy-mern.png",
       "descripcion": {
         "es": "Proyecto realizado con stack MERN para resolver necesidades médicas de las personas.",

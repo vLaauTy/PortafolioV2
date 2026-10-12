@@ -35,7 +35,7 @@ Decap hace un commit en el repo y Netlify vuelve a publicar el sitio solo, en un
 
 1. En GitHub: *Settings → Developer settings → OAuth Apps → New OAuth App*.
    - Homepage URL: la URL de tu sitio en Netlify.
-   - Authorization callback URL: `https://api.netlify.com/auth/done`
+   - Redirect URLs (antes "Authorization callback URL"): una sola, `https://api.netlify.com/auth/done`, sin wildcard.
    - Copiá el **Client ID** y generá un **Client secret**.
 2. En Netlify: *Site configuration → Access & security → OAuth → Install provider → GitHub* y pegá el Client ID y el secret.
 3. Listo: `/admin` ya permite iniciar sesión con tu cuenta de GitHub (necesita permisos de escritura en el repo).

@@ -103,7 +103,8 @@ const Hero = () => {
             </Button>
             {perfil.cv && (
               <Button as="a" href={perfil.cv} download $variant="secondary">
-                <FiDownload aria-hidden="true" /> {t.descargarCv}
+                <FiDownload aria-hidden="true" />{" "}
+                {perfil.cvEnOtroIdioma ? t.descargarCvOtroIdioma : t.descargarCv}
               </Button>
             )}
           </Actions>

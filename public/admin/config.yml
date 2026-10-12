@@ -39,7 +39,8 @@ collections:
           - { name: titulo, label: Título profesional, widget: object, fields: *linea }
           - { name: descripcion, label: Descripción (portada), widget: object, fields: *parrafo }
           - { name: imagen, label: Imagen de portada, widget: image }
-          - { name: cv, label: CV (PDF), widget: file }
+          - { name: cv, label: CV en español (PDF), widget: file }
+          - { name: cvEn, label: CV en inglés (PDF), widget: file, required: false, hint: "Opcional. Si está vacío, la versión en inglés del sitio ofrece el CV en español y lo aclara en el botón" }
           - { name: sobreMi, label: Sobre mí, widget: object, fields: *parrafo }
           - { name: email, label: Email de contacto (también recibe el formulario), widget: string }
           - name: redes
