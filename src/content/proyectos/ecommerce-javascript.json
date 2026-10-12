@@ -1,0 +1,24 @@
+{
+  "es": {
+    "nombre": "Ecommerce JavaScript",
+    "descripcion": "Página realizada para practicar código JavaScript.",
+    "tecnologias": [
+      "JavaScript",
+      "Toastify"
+    ],
+    "imagen": "/assets/javascript.jpg",
+    "demo": "https://vlaauty.github.io/proyecto_javascript/",
+    "repo": "https://github.com/vLaauTy/proyecto_javascript",
+    "destacado": false,
+    "orden": 50
+  },
+  "en": {
+    "nombre": "JavaScript Ecommerce",
+    "descripcion": "A site built to practice JavaScript.",
+    "imagen": "/assets/javascript.jpg",
+    "demo": "https://vlaauty.github.io/proyecto_javascript/",
+    "repo": "https://github.com/vLaauTy/proyecto_javascript",
+    "destacado": false,
+    "orden": 50
+  }
+}

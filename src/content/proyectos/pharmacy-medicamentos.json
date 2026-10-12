@@ -1,0 +1,25 @@
+{
+  "es": {
+    "nombre": "Pharmacy Medicamentos",
+    "descripcion": "Proyecto realizado con stack MERN para resolver necesidades médicas de las personas.",
+    "tecnologias": [
+      "MERN",
+      "Tailwind",
+      "Framer Motion"
+    ],
+    "imagen": "/assets/pharmacy-mern.png",
+    "demo": "https://pharmacy-mern.onrender.com/",
+    "repo": "https://github.com/No-Country/C8-65-FT-MERN",
+    "destacado": false,
+    "orden": 30
+  },
+  "en": {
+    "nombre": "Pharmacy Medicamentos",
+    "descripcion": "Project built with the MERN stack to help people with their medical needs.",
+    "imagen": "/assets/pharmacy-mern.png",
+    "demo": "https://pharmacy-mern.onrender.com/",
+    "repo": "https://github.com/No-Country/C8-65-FT-MERN",
+    "destacado": false,
+    "orden": 30
+  }
+}

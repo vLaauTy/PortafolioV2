@@ -1,0 +1,26 @@
+{
+  "es": {
+    "nombre": "SaludSync",
+    "descripcion": "Proyecto final para la carrera. Se trata de una propuesta de software pensado para la gestión de turnos médicos de un consultorio. Su foco principal es mejorar la organización de turnos de cada médico dentro del consultorio.",
+    "tecnologias": [
+      "Java",
+      "Spring Boot",
+      "Thymeleaf",
+      "MySQL"
+    ],
+    "imagen": "/assets/saludsync.png",
+    "demo": "",
+    "repo": "https://github.com/vLaauTy/Farmacia",
+    "destacado": true,
+    "orden": 10
+  },
+  "en": {
+    "nombre": "SaludSync",
+    "descripcion": "Final degree project: software designed to manage medical appointments at a clinic. Its main goal is to improve how each doctor's appointments are organized within the practice.",
+    "imagen": "/assets/saludsync.png",
+    "demo": "",
+    "repo": "https://github.com/vLaauTy/Farmacia",
+    "destacado": true,
+    "orden": 10
+  }
+}

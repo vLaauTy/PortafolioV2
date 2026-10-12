@@ -1,0 +1,16 @@
+{
+  "es": {
+    "nombre": "Lautaro Atencio",
+    "titulo": "Técnico superior en desarrollo de software",
+    "descripcion": "Soy Lautaro Atencio y soy técnico superior en desarrollo de software, capacitado para realizar análisis de sistemas y realizar desarrollo de software. Estoy especializado en el lenguaje Java con el framework Spring, utilizando también como base de datos MySQL.",
+    "imagen": "/image.png",
+    "cv": "/assets/uploads/atencio_lautaro.pdf"
+  },
+  "en": {
+    "nombre": "Lautaro Atencio",
+    "titulo": "Software Developer",
+    "descripcion": "I'm Lautaro Atencio, a software development technician trained in systems analysis and software development. I specialize in Java with the Spring framework, using MySQL as my database.",
+    "imagen": "/image.png",
+    "cv": ""
+  }
+}

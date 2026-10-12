@@ -1,0 +1,26 @@
+{
+  "es": {
+    "nombre": "Hexa Technology",
+    "descripcion": "Página realizada para la venta de equipos de laboratorio, desarrollada en equipo junto a un front end developer y dos diseñadoras UX/UI.",
+    "tecnologias": [
+      "ReactJS",
+      "Styled Components",
+      "React Hook Form",
+      "Framer Motion"
+    ],
+    "imagen": "/assets/Hexa.png",
+    "demo": "https://prueba-hexatech-web.web.app/",
+    "repo": "https://github.com/vLaauTy/hexatech.ar",
+    "destacado": true,
+    "orden": 20
+  },
+  "en": {
+    "nombre": "Hexa Technology",
+    "descripcion": "Website for selling laboratory equipment, built as a team with a front-end developer and two UX/UI designers.",
+    "imagen": "/assets/Hexa.png",
+    "demo": "https://prueba-hexatech-web.web.app/",
+    "repo": "https://github.com/vLaauTy/hexatech.ar",
+    "destacado": true,
+    "orden": 20
+  }
+}

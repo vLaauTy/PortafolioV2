@@ -1,52 +1,114 @@
-# Configuración de Decap CMS. El panel queda en https://<tu-sitio>/admin
-# Cada vez que guardás ("Publicar"), Decap hace un commit en GitHub y Netlify vuelve a publicar el sitio.
+# Configuración del panel de contenido (Decap CMS). Se usa en https://atencio-portafolio.netlify.app/admin
+# Al tocar "Publicar", Decap hace un commit en GitHub y Netlify vuelve a publicar el sitio (1-2 minutos).
 backend:
   name: github
   repo: vLaauTy/PortafolioV2
   branch: main
   commit_messages:
-    update: "Contenido: actualizar {{slug}}"
+    create: "Contenido: agregar {{collection}} «{{slug}}»"
+    update: "Contenido: actualizar {{collection}} «{{slug}}»"
+    delete: "Contenido: borrar {{collection}} «{{slug}}»"
     uploadMedia: "Contenido: subir {{path}}"
+    deleteMedia: "Contenido: borrar {{path}}"
 
 # Permite editar en local con `npx decap-server` (ver README)
 local_backend: true
 
 locale: es
+site_url: https://atencio-portafolio.netlify.app
+display_url: https://atencio-portafolio.netlify.app
 
-# Las imágenes y archivos subidos desde el panel se guardan acá
+# Imágenes y archivos subidos (si una sección no indica otra carpeta)
 media_folder: public/assets/uploads
 public_folder: /assets/uploads
 
-# Campos de texto traducibles: cada uno guarda { es, en }. Si el inglés queda vacío, el sitio muestra el español.
-_linea: &linea
-  - { name: es, label: Español, widget: string }
-  - { name: en, label: Inglés, widget: string, required: false }
-_parrafo: &parrafo
-  - { name: es, label: Español, widget: text }
-  - { name: en, label: Inglés, widget: text, required: false }
+# Idiomas del sitio. Los textos se cargan en español; el inglés es opcional (si queda vacío, se muestra el español).
+i18n:
+  structure: single_file
+  locales: [es, en]
+  default_locale: es
 
 collections:
-  - name: contenido
-    label: Contenido del sitio
+  # ─────────────────────────────── Textos del sitio ───────────────────────────────
+  - name: sitio
+    label: Textos del sitio
+    label_singular: Texto
+    description: >-
+      Los textos de cada parte de la página de inicio. Escribí primero en español; con el selector de idioma
+      (arriba del formulario) podés ver el inglés al lado y completarlo. Lo que dejes vacío en inglés se muestra en español.
+    i18n: true
     editor:
       preview: false
     files:
-      - name: perfil
-        label: Perfil, Sobre mí y Contacto
-        file: src/content/perfil.json
+      - name: portada
+        label: "1 · Portada (lo primero que se ve)"
+        file: src/content/sitio/portada.json
+        i18n: true
         fields:
-          - { name: nombre, label: Nombre, widget: string }
-          - { name: titulo, label: Título profesional, widget: object, fields: *linea }
-          - { name: descripcion, label: Descripción (portada), widget: object, fields: *parrafo }
-          - { name: imagen, label: Imagen de portada, widget: image }
-          - { name: cv, label: CV en español (PDF), widget: file }
-          - { name: cvEn, label: CV en inglés (PDF), widget: file, required: false, hint: "Opcional. Si está vacío, la versión en inglés del sitio ofrece el CV en español y lo aclara en el botón" }
-          - { name: sobreMi, label: Sobre mí, widget: object, fields: *parrafo }
-          - { name: email, label: Email de contacto (también recibe el formulario), widget: string }
+          - { name: nombre, label: Tu nombre, widget: string, i18n: duplicate }
+          - name: titulo
+            label: Título profesional
+            widget: string
+            i18n: true
+            hint: "Aparece arriba de tu nombre, en mayúsculas. Ej: Técnico superior en desarrollo de software"
+          - name: descripcion
+            label: Presentación
+            widget: text
+            i18n: true
+            hint: "2 o 3 oraciones sobre quién sos y en qué te especializás."
+          - name: imagen
+            label: Imagen de la portada
+            widget: image
+            i18n: duplicate
+            choose_url: false
+            hint: "Ilustración o foto cuadrada. Se muestra a la derecha en computadora y chica arriba en el celular."
+          - name: cv
+            label: CV (PDF)
+            widget: file
+            i18n: true
+            required: false
+            choose_url: false
+            hint: "En español: el CV principal. En inglés: subí tu CV en inglés; si lo dejás vacío, se ofrece el de español y el botón lo aclara."
+
+      - name: sobre-mi
+        label: "2 · Sobre mí"
+        file: src/content/sitio/sobre-mi.json
+        i18n: true
+        fields:
+          - { name: titulo, label: Título de la sección, widget: string, i18n: true, hint: "Ej: Cómo llegué al desarrollo" }
+          - name: texto
+            label: Texto
+            widget: text
+            i18n: true
+            hint: "Para separar en párrafos, dejá una línea en blanco entre uno y otro."
+
+      - name: encabezados
+        label: "3 · Títulos de Proyectos y Skills"
+        file: src/content/sitio/encabezados.json
+        i18n: true
+        fields:
+          - { name: proyectos, label: Título de la sección Proyectos, widget: string, i18n: true, hint: "Ej: Proyectos destacados" }
+          - { name: skills, label: Título de la sección Skills, widget: string, i18n: true, hint: "Ej: Tecnologías con las que trabajo" }
+
+      - name: contacto
+        label: "4 · Contacto y redes"
+        file: src/content/sitio/contacto.json
+        i18n: true
+        fields:
+          - { name: titulo, label: Título de la sección, widget: string, i18n: true, hint: "Ej: ¿Hablamos?" }
+          - { name: texto, label: Texto de invitación, widget: text, i18n: true }
+          - name: email
+            label: Email
+            widget: string
+            i18n: duplicate
+            hint: "Se muestra en la página y es donde te llegan los mensajes del formulario."
           - name: redes
-            label: Redes
+            label: Redes sociales
+            label_singular: red
             widget: list
-            summary: "{{fields.red}}"
+            collapsed: true
+            summary: "{{fields.red}} — {{fields.url}}"
+            hint: "Aparecen como íconos en la portada, en Contacto y al pie. Arrastrá para cambiar el orden."
             fields:
               - name: red
                 label: Red
@@ -56,47 +118,93 @@ collections:
                   - { label: LinkedIn, value: linkedin }
                   - { label: Instagram, value: instagram }
                   - { label: X / Twitter, value: twitter }
-                  - { label: Otra, value: web }
-              - { name: url, label: URL, widget: string }
-          - name: secciones
-            label: Títulos de las secciones
-            widget: object
-            fields:
-              - { name: sobreMi, label: Sobre mí, widget: object, fields: *linea }
-              - { name: proyectos, label: Proyectos, widget: object, fields: *linea }
-              - { name: skills, label: Skills, widget: object, fields: *linea }
-          - name: contacto
-            label: Sección Contacto
-            widget: object
-            fields:
-              - { name: titulo, label: Título, widget: object, fields: *linea }
-              - { name: texto, label: Texto, widget: object, fields: *parrafo }
+                  - { label: Otra (sitio web), value: web }
+              - { name: url, label: Link completo, widget: string, hint: "Ej: https://github.com/tu-usuario" }
 
-      - name: proyectos
-        label: Proyectos
-        file: src/content/proyectos.json
-        fields:
-          - name: proyectos
-            label: Proyectos (arrastrá para cambiar el orden)
-            widget: list
-            summary: "{{fields.nombre.es}}"
-            fields:
-              - { name: nombre, label: Nombre, widget: object, fields: *linea }
-              - { name: imagen, label: Imagen, widget: image }
-              - { name: descripcion, label: Descripción, widget: object, fields: *parrafo }
-              - { name: tecnologias, label: Tecnologías, widget: list, hint: "Separadas por coma" }
-              - { name: demo, label: Link a la demo, widget: string, required: false, hint: "Dejalo vacío si no hay demo online" }
-              - { name: repo, label: Link al repositorio, widget: string, required: false }
-              - { name: destacado, label: Mostrar en la página de inicio, widget: boolean, default: false }
+  # ─────────────────────────────── Proyectos ───────────────────────────────
+  - name: proyectos
+    label: Proyectos
+    label_singular: proyecto
+    description: >-
+      Cada proyecto es una tarjeta. Los marcados con ★ aparecen en la página de inicio; todos aparecen en /proyectos.
+      Para agregar uno, tocá "+ proyecto". Para verlos en el orden del sitio, elegí "Ordenar por → Orden".
+    folder: src/content/proyectos
+    format: json
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{fields.nombre}}"
+    identifier_field: nombre
+    summary: "{{nombre}}{{destacado | ternary(' ★ destacado', '')}}"
+    sortable_fields: [orden, nombre]
+    view_filters:
+      - { label: Destacados en el inicio, field: destacado, pattern: true }
+      - { label: No destacados, field: destacado, pattern: false }
+    media_folder: /public/assets/proyectos
+    public_folder: /assets/proyectos
+    editor:
+      preview: false
+    fields:
+      - { name: nombre, label: Nombre del proyecto, widget: string, i18n: true }
+      - name: descripcion
+        label: Descripción
+        widget: text
+        i18n: true
+        hint: "1 a 3 oraciones: qué es, para qué sirve y con quién lo hiciste."
+      - name: imagen
+        label: Captura de pantalla
+        widget: image
+        i18n: duplicate
+        choose_url: false
+        hint: "Horizontal (ideal 1600×900). Se recorta desde arriba para que se vea el encabezado del sitio."
+      - name: tecnologias
+        label: Tecnologías
+        widget: list
+        hint: "Escribilas separadas por coma. Ej: React, Firebase, Tailwind"
+      - name: demo
+        label: Link a la demo
+        widget: string
+        required: false
+        i18n: duplicate
+        hint: "Link al sitio funcionando. Dejalo vacío si no está online."
+      - name: repo
+        label: Link al código (GitHub)
+        widget: string
+        required: false
+        i18n: duplicate
+      - name: destacado
+        label: ¿Mostrar en la página de inicio?
+        widget: boolean
+        default: false
+        i18n: duplicate
+      - name: orden
+        label: Orden
+        widget: number
+        value_type: int
+        default: 100
+        i18n: duplicate
+        hint: "Los números más chicos aparecen primero (10, 20, 30…). Dejá saltos para poder meter uno en el medio."
 
+  # ─────────────────────────────── Skills ───────────────────────────────
+  - name: skills
+    label: Skills
+    description: Las tecnologías que se muestran en la sección Skills.
+    editor:
+      preview: false
+    files:
       - name: skills
-        label: Skills
+        label: Lista de skills
         file: src/content/skills.json
+        media_folder: /public/assets/skills
+        public_folder: /assets/skills
         fields:
           - name: skills
-            label: Skills (arrastrá para cambiar el orden)
+            label: Skills
+            label_singular: skill
             widget: list
+            collapsed: true
             summary: "{{fields.nombre}}"
+            hint: "Arrastrá para cambiar el orden. Usá íconos PNG o SVG con fondo transparente."
             fields:
               - { name: nombre, label: Nombre, widget: string }
-              - { name: icono, label: Ícono, widget: image }
+              - { name: icono, label: Ícono, widget: image, choose_url: false }

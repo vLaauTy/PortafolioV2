@@ -14,13 +14,17 @@ Todo el contenido está en `src/content/`. No hace falta tocar componentes.
 
 | Archivo | Qué contiene |
 | --- | --- |
-| `perfil.json` | Nombre, título, descripción, imagen, CV, "Sobre mí", email, redes, títulos de sección y textos de Contacto |
-| `proyectos.json` | Lista de proyectos. Con `"destacado": true` aparecen en el inicio. El orden de la lista es el orden en pantalla |
+| `sitio/portada.json` | Nombre, título, presentación, imagen y CV (uno por idioma) |
+| `sitio/sobre-mi.json` | Título y texto de "Sobre mí" |
+| `sitio/encabezados.json` | Títulos de las secciones Proyectos y Skills |
+| `sitio/contacto.json` | Título y texto de Contacto, email y redes |
+| `proyectos/*.json` | Un archivo por proyecto. `destacado: true` lo muestra en el inicio; `orden` define la posición (menor primero) |
 | `skills.json` | Lista de tecnologías con su ícono |
 
 Las imágenes van en `public/assets/` y se referencian con la ruta absoluta, por ejemplo `/assets/mi-proyecto.png`.
 
-**Idiomas:** los textos traducibles tienen la forma `{ "es": "...", "en": "..." }`. Si el inglés queda vacío, se muestra el español.
+**Idiomas:** cada archivo traducible tiene la forma `{ "es": {...}, "en": {...} }`. Si un campo queda vacío en inglés, se muestra el español.
+Las redes y las tecnologías de cada proyecto se leen solo de `es`.
 Los textos fijos de la interfaz (botones, etiquetas del formulario, mensajes) están en `src/i18n.js`.
 Para compartir el sitio directamente en inglés: `https://<tu-sitio>/?lang=en`.
 

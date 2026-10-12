@@ -1,0 +1,24 @@
+{
+  "es": {
+    "nombre": "Práctica Redux",
+    "descripcion": "Aplicación para practicar Redux Toolkit.",
+    "tecnologias": [
+      "ReactJS",
+      "Redux"
+    ],
+    "imagen": "/assets/redux-practica.png",
+    "demo": "https://redux-toolkit-tasks.web.app/",
+    "repo": "https://github.com/vLaauTy/redux-crud",
+    "destacado": false,
+    "orden": 60
+  },
+  "en": {
+    "nombre": "Redux Practice",
+    "descripcion": "An app to practice Redux Toolkit.",
+    "imagen": "/assets/redux-practica.png",
+    "demo": "https://redux-toolkit-tasks.web.app/",
+    "repo": "https://github.com/vLaauTy/redux-crud",
+    "destacado": false,
+    "orden": 60
+  }
+}

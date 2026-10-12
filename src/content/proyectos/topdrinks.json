@@ -1,0 +1,26 @@
+{
+  "es": {
+    "nombre": "TopDrinks",
+    "descripcion": "Página realizada simulando un ecommerce de bebidas, utilizando useContext y Firebase para su base de datos.",
+    "tecnologias": [
+      "ReactJS",
+      "useContext",
+      "Firebase",
+      "MaterialUI"
+    ],
+    "imagen": "/assets/topDrinks.png",
+    "demo": "https://topdrinks-e8419.firebaseapp.com/",
+    "repo": "https://github.com/vLaauTy/topDrinkAtencio",
+    "destacado": false,
+    "orden": 40
+  },
+  "en": {
+    "nombre": "TopDrinks",
+    "descripcion": "A mock beverage ecommerce site, using useContext and Firebase as its database.",
+    "imagen": "/assets/topDrinks.png",
+    "demo": "https://topdrinks-e8419.firebaseapp.com/",
+    "repo": "https://github.com/vLaauTy/topDrinkAtencio",
+    "destacado": false,
+    "orden": 40
+  }
+}

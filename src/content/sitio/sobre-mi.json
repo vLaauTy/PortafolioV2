@@ -1,0 +1,10 @@
+{
+  "es": {
+    "titulo": "Cómo llegué al desarrollo",
+    "texto": "Empecé en el mundo de la programación estudiando MySQL en la universidad, después seguí investigando por mi propia cuenta sobre el desarrollo front end de sitios web. Actualmente me enfoco más en desarrollos de ecommerce, tanto en el diseño de su interfaz como en la realización de su respectivo CRUD."
+  },
+  "en": {
+    "titulo": "How I got into development",
+    "texto": "I got into programming by studying MySQL at university, and then kept learning front-end web development on my own. Today I mostly focus on ecommerce projects, from designing the interface to building the CRUD behind it."
+  }
+}
